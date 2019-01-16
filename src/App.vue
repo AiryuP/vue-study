@@ -27,11 +27,33 @@
         </ul>
       </div>
     </div>
-    
+
+    <br/><br/><br/>
+    <h2>加载另一个组件</h2>
+    <BindClass></BindClass> 
+    <br/><br/><br/>
+    <Todolist></Todolist>
+    <br/><br/><br/>
+    <HttpRequest></HttpRequest>
+    <br/><br/><br/>
+    <AxiosRequest></AxiosRequest>
+
+
+
+
+    <br/><br/><br/>
+    <br/><br/><br/>
+    <br/><br/><br/>
   </div>
 </template>
 
 <script>
+
+  import BindClass from './components/bindClass.vue';
+  import Todolist from './components/Todolist.vue';
+  import HttpRequest from './components/HttpRequest.vue';
+  import AxiosRequest from './components/AxiosRequest.vue';
+
 export default {
   name: 'app',
   data () {
@@ -67,6 +89,12 @@ export default {
         }
       ]
     }
+  },
+  components :{
+      "BindClass": BindClass,
+      "Todolist" : Todolist,
+      'HttpRequest': HttpRequest,
+      "AxiosRequest":AxiosRequest
   }
 }
 </script>
