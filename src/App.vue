@@ -37,8 +37,10 @@
     <HttpRequest></HttpRequest>
     <br/><br/><br/>
     <AxiosRequest></AxiosRequest>
-
-
+    <br/><br/><br/> 
+    <FetchJson></FetchJson>
+    <br/><br/><br/>
+    <PassValue :title="title" :haha="fatFun"></PassValue>
 
 
     <br/><br/><br/>
@@ -48,17 +50,20 @@
 </template>
 
 <script>
-
+  // 引入组件
   import BindClass from './components/bindClass.vue';
   import Todolist from './components/Todolist.vue';
   import HttpRequest from './components/HttpRequest.vue';
   import AxiosRequest from './components/AxiosRequest.vue';
+  import FetchJson from './components/FetchJson.vue';
+  import PassValue from './components/PassValue.vue';
 
 export default {
   name: 'app',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
+      title: "X我是父组件中的值X",
       obj:{
         "name": '张三'
       },
@@ -90,11 +95,19 @@ export default {
       ]
     }
   },
+  methods:{
+      fatFun(a){
+        console.log("这是父组件中的方法。"+a)
+      }
+  },
+  // 挂载组件
   components :{
       "BindClass": BindClass,
       "Todolist" : Todolist,
       'HttpRequest': HttpRequest,
-      "AxiosRequest":AxiosRequest
+      "AxiosRequest":AxiosRequest,
+      "FetchJson":FetchJson,
+      "PassValue":PassValue
   }
 }
 </script>
