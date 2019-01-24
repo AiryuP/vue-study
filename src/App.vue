@@ -40,8 +40,10 @@
     <br/><br/><br/> 
     <FetchJson></FetchJson>
     <br/><br/><br/>
-    <PassValue :title="title" :haha="fatFun"></PassValue>
-
+    <PassValue :title="title" :haha="fatFun" ref="zizujian"></PassValue>
+    <button @click="getSonData()" >获取子组件的数据和方法</button>
+    <br/><br/><br/>
+    <VueRoute></VueRoute>
 
     <br/><br/><br/>
     <br/><br/><br/>
@@ -57,6 +59,7 @@
   import AxiosRequest from './components/AxiosRequest.vue';
   import FetchJson from './components/FetchJson.vue';
   import PassValue from './components/PassValue.vue';
+  import VueRoute from './components/VueRoute.vue';
 
 export default {
   name: 'app',
@@ -98,6 +101,12 @@ export default {
   methods:{
       fatFun(a){
         console.log("这是父组件中的方法。"+a)
+      },
+      getSonData(){
+        // console.log(1111)
+        // console.log( this.$refs.zizujian.son );
+        // console.log(  );
+        this.$refs.zizujian.run();
       }
   },
   // 挂载组件
@@ -107,7 +116,8 @@ export default {
       'HttpRequest': HttpRequest,
       "AxiosRequest":AxiosRequest,
       "FetchJson":FetchJson,
-      "PassValue":PassValue
+      "PassValue":PassValue,
+      "VueRoute" :VueRoute
   }
 }
 </script>
