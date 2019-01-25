@@ -45,6 +45,10 @@
     <br/><br/><br/>
     <VueRoute></VueRoute>
 
+      <!-- 路由出口 -->
+      <!-- 路由匹配到的组件将渲染在这里 -->
+      <router-view></router-view>
+
     <br/><br/><br/>
     <br/><br/><br/>
     <br/><br/><br/>
@@ -108,7 +112,8 @@ export default {
         // console.log(  );
         this.$refs.zizujian.run();
       }
-  },
+  }
+  ,
   // 挂载组件
   components :{
       "BindClass": BindClass,
