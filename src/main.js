@@ -16,9 +16,11 @@ import AxiosRequest from './components/AxiosRequest.vue';
 import FetchJson from './components/FetchJson.vue';
 import PassValue from './components/PassValue.vue';
 import VueRoute from './components/VueRoute.vue';
+import Traffic from './components/Traffic.vue';
 
 // 配置路由
 const routes = [
+  { path: '/traffic',component: Traffic },
   { path: '/bindClass',component: BindClass },
   { path: '/todoList',component: Todolist },
   { path: '/httpRequest',component: HttpRequest },
@@ -26,7 +28,7 @@ const routes = [
   { path: '/fetchJson',component: FetchJson },
   { path: '/passValue',component: PassValue },
   { path: '/vueRoute',component: VueRoute },
-  { path: '*' , redirect: '/bindClass' }
+  { path: '*' , redirect: '/traffic' }
 ]
 
 // 实例化vueRouter
@@ -35,7 +37,11 @@ const router = new VueRouter({
   routes //缩写，相当于  routes： routes
 })
 
-
+Vue.http.options.emulateHTTP = true;
+Vue.http.options.emulateJSON = true;
+// Vue.http.options.headers = {
+//   'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+// };
 // 挂载路由
 
 

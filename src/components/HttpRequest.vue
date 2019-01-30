@@ -45,7 +45,7 @@ export default {
             // });
 
             this.$http.get("https://www.layui.com/demo/table/user/").then(res =>{
-                console.log(  res )
+                // console.log(  res )
 
             },err=>{
                 console.log(err)

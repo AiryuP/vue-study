@@ -83,7 +83,11 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  //引入第三方插件
+  externals: {
+    'BMap': 'BMap'
+  }
 }
 
 if (process.env.NODE_ENV === 'production') {

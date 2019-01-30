@@ -48,7 +48,7 @@ export default {
         },
         setData(){
             this.list2 = this.list;
-        }
+        },
     },
     components:{
 
